@@ -1,0 +1,834 @@
+.calendar2{
+	background: #fff;
+	border: solid 1px #b5e4ee;
+	padding: 10px 3px 3px;
+	border-radius: 6px;
+	box-shadow: 0 0 5px #ccc;
+	.monthtb{
+		background: #fff;
+		margin: 0;
+		th{
+			text-align: center;
+			padding: 3px;
+			background: #b5e4ee;
+			color:#333;
+			font-weight: bold;
+			border: solid 1px #eee;
+			&.sun{
+				color: $color-red;
+			}
+			&.sat{
+				color: $color-green;
+			}
+		}
+		td{
+			text-align: center;
+			padding: 3px;
+			border: solid 1px #eee;
+			font-size: .875em;
+			font-weight: bold;
+		}
+		a{
+			display: inline-block;
+			width: 2em;
+			height:2em;
+			line-height: 2em;
+			&:hover, &:focus{
+				background: #eee;
+				border-radius: 50%;
+			}
+		}
+		.rest{
+			// background: #b5e4ee;
+			background: #e4e5e6;
+			color:#fff;
+			span{
+				display: inline-block;
+				width: 2em;
+				height:2em;
+				line-height: 2em;
+			}
+		}
+		.space{
+			background: #e4e5e6;
+		}
+		.today{
+			a{
+				background: $secondaryColor;
+				border-radius: 50%;
+				color:#fff;
+			}
+		}
+	}
+	.fc-toolbar{
+		position: relative;
+		margin-bottom: .2em;
+
+		.fc-left{
+			position: absolute;
+			left:0;
+			top:0;
+			button, input[type="button"]{
+				font-size: .875em;
+				padding: .2em .5em .2em 0;
+			}
+		}
+		.fc-right{
+			position: absolute;
+			right:0;
+			top:0;
+			button, input[type="button"]{
+				font-size: .875em;
+				padding: .2em 0 .2em .5em;
+			}
+		}
+		.fc-center{
+			margin: 0 4em;
+		}
+		h3{
+			text-align: center;
+			font-size: 1.25em;
+			font-weight: bold;
+			line-height: 1.8em;
+			margin: 0;
+		}
+	}
+
+}
+
+//5
+.calendar5{
+	background: #fff;
+	border: solid 1px #b5e4ee;
+	padding: 10px 3px 3px;
+	border-radius: 6px;
+	box-shadow: 0 0 5px #ccc;
+	margin: 80px 2.5em 2em 1em;
+	position: relative;
+	h2{
+		margin: .5em 0 .5em;
+		text-align: center;
+		background: #eee;
+		border-radius: 5px;
+		padding: .3em;
+		color:$primaryColor;
+	}
+	.monthtb{
+		background: #fff;
+		margin: 0;
+		clear: both;
+		position: relative;
+		th{
+			text-align: center;
+			padding: 5px;
+			background: #b5e4ee;
+			color:#333;
+			font-weight: bold;
+			border: solid 1px #eee;
+			width: 12.5%;
+			height: 3em;
+			&.sun{
+				color: $color-red;
+			}
+			&.sat{
+				color: $color-red;
+			}
+		}
+		thead{
+			th{
+				background: $primaryColor;
+				color:#fff;	
+			}
+		}
+		td{
+			padding: 5px;
+			border: solid 1px #eee;
+			font-size: .938em;
+			height: 3.5em;
+		}
+
+		ul{
+			@include li-reset;
+			li{
+				margin: 3px 0;
+				padding: 0;
+				position: relative;
+				a{
+					display: block;
+					border-radius: 5px;
+					padding: 0 25px 0 0;
+					&:hover, &:focus{
+						background: #fdeaf1;
+						box-shadow: 0 0px 0px 1px #f288ad inset;
+						&:before{
+							content:"";
+							width:20px;
+							height: 20px;
+							position: absolute;
+							bottom:2px;
+							right:3px;
+							background: url('../images/icon-ok.png')no-repeat center center;
+							background-size: 16px auto;
+							z-index: 1;
+						}
+					}
+				}
+			}
+			.act1{
+				background: #0f9f3b;
+				padding: .3em .5em;
+				margin:0 .5em 0 0;
+				border-radius: 3px;
+				color:#fff;
+				font-size: .875em;
+				font-weight: bold;
+				min-width: 4em;
+				display: inline-block;
+				line-height: 1.25em;
+				text-align: center;
+				vertical-align: top;
+			}
+		}
+
+		.rest{
+			background: #ccc;
+			color:#fff;
+			span{
+				display: inline-block;
+				width: 2em;
+				height:2em;
+				line-height: 2em;
+			}
+		}
+		.space{
+			background: #ccc;
+		}
+		.today{
+			a{
+				background: $secondaryColor;
+				border-radius: 50%;
+				color:#fff;
+			}
+		}
+
+	}
+
+
+	.fc-toolbar{
+		position: fixed;
+		margin-bottom: .2em;
+		overflow: hidden;
+		top: 0;
+		left:0;
+		width: 100%;
+		min-width: 1000px;
+		height: 60px;
+		background: #fcdde8;
+		z-index: 2;
+		box-shadow: 0 0 8px 1px #aaa;
+
+		.r-block{
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(8);
+			@include make-lg-column(8);     
+		}
+		.c-block{
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(4);
+			@include make-lg-column(4);
+
+			button, input[type="button"]{
+				font-size: .875em;
+				padding: .3em .5em;
+			}
+			.inlinebox{
+				margin:.5em 1em;
+			}
+			.datepick {
+				padding-right: .5em;
+				position: relative;
+				display: inline-block;
+				@include screen('xs_mobile') {
+					width: 100%;
+					display: block;
+				}
+				label{
+					float: left;
+					line-height: 2.5em;
+				}
+				&+.datepick {
+					margin-left: .3em;
+					margin-right: 0;
+					padding-right: 0;
+					&:before {
+						content: "~";
+						font-size: 1.5em;
+						display: inline-block;
+						position: absolute;
+						left: -.65em;
+						top: .3em;
+						color: #777;
+					}
+					@include screen('xs_mobile') {
+						margin-left: 0em;
+						&:before {
+							display: none;
+						}
+					}
+					i {
+						right: .5em;
+					}
+				}
+				i {
+					position: absolute;
+					padding: .37em .1em !important;
+					right: .745em;
+					top: .22em;
+					min-width: 1em;
+					background: none;
+					border: none;
+					width: auto;
+					pointer-events: none;
+					&:hover, &:focus {
+						box-shadow: none;
+						border: none !important;
+					}
+				}
+				>input[type="date"] {
+					width:10em;
+					padding-right: 0;
+					@include screen('xs_mobile') {
+						width: 100%;
+					}
+				}
+				>input[type="month"] {
+					width:10em;
+					padding-right: 0;
+					@include screen('xs_mobile') {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+	}
+	.int{
+		margin: 1em 0 0.5em 1em;
+		padding: 0;
+		text-align: left;
+		font-size: .938em;
+		dt{
+			float: left;
+			margin: 0;
+			padding: 0;
+		}
+		dd{
+			display: inline-block;
+			margin: 0;
+			padding: 0 0 0 20px;
+			position: relative;
+			&.ok{
+				&:before{
+					content:"";
+					width: 1em;
+					height: 1em;
+					border-radius: 3px;
+					position: absolute;
+					left:0;
+					top:.25em;
+					background: #0f9f3b;
+				}
+			}
+			&.no{
+				&:before{
+					content:"";
+					width: 1em;
+					height: 1em;
+					border-radius: 3px;
+					position: absolute;
+					left:0;
+					top:.25em;
+					background: #ccc;
+				}
+			}
+		}
+	}
+	.btn_grp{
+		text-align: right;
+		padding: 5px 20px 0 0;
+	}
+
+
+}
+
+//6
+.calendar6{
+	background: #fff;
+	border: solid 1px #b5e4ee;
+	padding: 10px 3px 3px;
+	border-radius: 6px;
+	// box-shadow: 0 0 5px #ccc;
+	margin: 2em 2.5em 2em 1em;
+	.monthtb{
+		background: #fff;
+		margin: 0;
+		th{
+			text-align: center;
+			padding: 5px;
+			background: $primaryColor;
+			color:#fff;
+			font-weight: bold;
+			border: solid 1px #eee;
+			width: 14.2%;
+			&.sun{
+				background: $color-red;
+			}
+			&.sat{
+				background:  $color-red;
+			}
+		}
+		td{
+			text-align: center;
+			padding: 5px 8px;
+			border: solid 1px #eee;
+			height: 6em;
+			vertical-align: top;
+		}
+		.date{
+			font-size: 1em;
+			font-weight: bold;
+			a{
+				display: inline-block;
+				width: 2em;
+				height:2em;
+				line-height: 2em;
+				&:hover, &:focus{
+					background: #eee;
+					border-radius: 50%;
+				}
+			}
+		}
+
+		.rest{
+			// background: #b5e4ee;
+			background: #ccc;
+			color:#fff;
+			span{
+				display: inline-block;
+				width: 2em;
+				height:2em;
+				line-height: 2em;
+			}
+		}
+		.space{
+			background: #ccc;
+		}
+		.today{
+			a{
+				background: $secondaryColor;
+				border-radius: 50%;
+				color:#fff;
+				&:hover{
+					background: #ca2860;
+				}
+			}
+		}
+		//event
+		.event{
+			@include li-reset;
+			font-size: 1em;
+			font-weight: bold;
+			li{
+				margin: 3px 0;
+				padding: 0;
+				position: relative;
+				text-align: left;
+				border-radius: 3px;
+				.info{
+					display: none;
+					background: #fff;
+					h3{
+						margin: 5px;
+						line-height: 1.3em;
+						font-size: 1em;
+						color:$primaryColor;
+					}
+					ul{
+						margin: 0;
+						padding: 0;
+						font-size: .875em;	
+						@include li-reset;
+						li{
+							margin: 0 0 3px!important;
+							padding: 2px 6px!important;
+							background: #eee;
+							text-align: center;	
+						}
+					}
+				}
+				a{
+					display: block;
+					border-radius: 5px;
+					padding: .1em .5em;
+					color:#fff;
+					position: relative;
+					@include text-overflow;
+					&:hover + .info , &:focus + .info{
+						display: block;
+					}
+				}
+				&.color1{
+					a{
+						background-color: #DB4D6D;
+					}
+				}
+				&.color2{
+					a{
+						background-color: #fc8d2a;
+					}
+				}
+				&.color3{
+					a{
+						background-color: #24936E;
+					}
+				}
+				&.color4{
+					a{
+						background-color: #79b434;
+					}
+				}
+				&.color5{
+					a{
+						background-color: #C1328E;
+					}
+				}
+				&.color6{
+					a{
+						background-color: #C18A26;
+					}
+				}
+				&.color7{
+					a{
+						background-color: #2B5F75;
+					}
+				}
+				&.color8{
+					a{
+						background-color: #8A6BBE;
+					}
+				}
+				&.color9{
+					a{
+						background-color: #E83015;
+					}
+				}
+				&.color10{
+					a{
+						background-color: #2EA9DF;
+					}
+				}
+				&.color11{
+					a{
+						background-color: #2D6D4B;
+					}
+				}
+			}
+
+		}
+
+	}
+	//
+	.fc-toolbar{
+		position: relative;
+		margin-bottom: .2em;
+
+		.fc-left{
+			position: absolute;
+			left:0;
+			top:0;
+			button, input[type="button"]{
+				// font-size: 1em;
+				padding: .5em;
+				
+			}
+		}
+		.fc-right{
+			position: absolute;
+			right:0;
+			top:0;
+			button, input[type="button"]{
+				// font-size: 1em;
+				padding: .2em 0 .2em .5em;
+			}
+		}
+		.fc-center{
+			margin: 0 4em;
+		}
+		h3{
+			text-align: center;
+			font-size: 1.5em;
+			font-weight: bold;
+			line-height: 1.8em;
+			margin: 0;
+		}
+	}
+
+}
+
+
+//7
+
+.calendar7{
+	background: #fff;
+	border: solid 1px #b5e4ee;
+	padding: 10px 3px 3px;
+	border-radius: 6px;
+	box-shadow: 0 0 5px #ccc;
+	margin: 80px 1em 2em 1em;
+	position: relative;
+	h2{
+		margin: .5em 0 .5em;
+		text-align: center;
+		background: #eee;
+		border-radius: 5px;
+		padding: .3em;
+		color:$primaryColor;
+	}
+	h3{
+		margin: 1em .3em .2em;
+	}
+	.monthtb{
+		background: #fff;
+		margin: 0;
+		clear: both;
+		position: relative;
+		th{
+			text-align: center;
+			padding: 5px;
+			background: #b5e4ee;
+			color:#333;
+			font-weight: bold;
+			border: solid 1px #eee;
+			width: 12.5%;
+			height: 3em;
+			white-space:normal;
+			&.sun{
+				color: $color-red;
+			}
+			&.sat{
+				color: $color-red;
+			}
+		}
+		thead{
+			th{
+				background: $primaryColor;
+				color:#fff;	
+			}
+		}
+		td{
+			padding: 8px 5px 5px;
+			border: solid 1px #eee;
+			font-size: .938em;
+			height: 3.5em;
+		}
+
+		ul{
+			@include li-reset;
+			li{
+				margin: 0 0 3px;
+				padding: 0;
+				position: relative;
+				a{
+					display: block;
+					line-height: 1.3em;
+					border-radius: 5px;
+					padding: 3px 5px;
+					background: #fdeaf1;
+					box-shadow: 0 0px 0px 1px #fcabc7 inset;
+					&:hover, &:focus{
+						background: $secondaryColor;
+						box-shadow: 0 0px 0px 1px #f288ad inset;
+						color:#fff;
+					}
+				}
+				.time{
+					font-weight: bold;
+					margin-right: .5em;
+				}
+			}
+
+		}
+
+		.rest{
+			background: #ccc;
+			color:#fff;
+			span{
+				display: inline-block;
+				width: 2em;
+				height:2em;
+				line-height: 2em;
+			}
+		}
+		.space{
+			background: #ccc;
+		}
+		.today{
+			a{
+				background: $secondaryColor;
+				border-radius: 50%;
+				color:#fff;
+			}
+		}
+
+	}
+
+
+	.fc-toolbar{
+		position: fixed;
+		margin-bottom: .2em;
+		overflow: hidden;
+		top: 0;
+		left:0;
+		width: 100%;
+		min-width: 1000px;
+		height: 60px;
+		background: #fcdde8;
+		z-index: 2;
+		box-shadow: 0 0 8px 1px #aaa;
+		.r-block{
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(8);
+			@include make-lg-column(8);     
+		}
+		.c-block{
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(4);
+			@include make-lg-column(4);
+
+
+			.inlinebox{
+				margin:.5em 1em;
+			}
+			.datepick {
+				padding-right: .5em;
+				position: relative;
+				display: inline-block;
+				@include screen('xs_mobile') {
+					width: 100%;
+					display: block;
+				}
+				label{
+					float: left;
+					line-height: 2.5em;
+				}
+				&+.datepick {
+					margin-left: .3em;
+					margin-right: 0;
+					padding-right: 0;
+					&:before {
+						content: "~";
+						font-size: 1.5em;
+						display: inline-block;
+						position: absolute;
+						left: -.65em;
+						top: .3em;
+						color: #777;
+					}
+					@include screen('xs_mobile') {
+						margin-left: 0em;
+						&:before {
+							display: none;
+						}
+					}
+					i {
+						right: .5em;
+					}
+				}
+				i {
+					position: absolute;
+					padding: .37em .1em !important;
+					right: .745em;
+					top: .22em;
+					min-width: 1em;
+					background: none;
+					border: none;
+					width: auto;
+					pointer-events: none;
+					&:hover, &:focus {
+						box-shadow: none;
+						border: none !important;
+					}
+				}
+				>input[type="date"] {
+					width:10em;
+					padding-right: 0;
+					@include screen('xs_mobile') {
+						width: 100%;
+					}
+				}
+				>input[type="month"] {
+					width:10em;
+					padding-right: 0;
+					@include screen('xs_mobile') {
+						width: 100%;
+					}
+				}
+				.btn{
+					margin-top: 0em!important;
+				}
+			}
+		}
+
+	}
+	.int{
+		margin: 1em 0 0.5em 1em;
+		padding: 0;
+		text-align: left;
+		font-size: .938em;
+		dt{
+			float: left;
+			margin: 0;
+			padding: 0;
+		}
+		dd{
+			display: inline-block;
+			margin: 0;
+			padding: 0 0 0 20px;
+			position: relative;
+			&.ok{
+				&:before{
+					content:"";
+					width: 1em;
+					height: 1em;
+					border-radius: 3px;
+					position: absolute;
+					left:0;
+					top:.25em;
+					background: #0f9f3b;
+				}
+			}
+			&.no{
+				&:before{
+					content:"";
+					width: 1em;
+					height: 1em;
+					border-radius: 3px;
+					position: absolute;
+					left:0;
+					top:.25em;
+					background: #ccc;
+				}
+			}
+		}
+	}
+	.btn_grp{
+		text-align: right;
+		padding: 5px 20px 0 0;
+	}
+
+
+}
