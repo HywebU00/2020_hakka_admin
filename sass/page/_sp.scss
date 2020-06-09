@@ -171,28 +171,23 @@
   a{
     display: block;
     background: #666;
-    width:12px;
-    height: 100px;
+    width:2em;
+    // height: 4em;
     // border-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
     cursor: pointer;
     position: relative;
-    font-size: 0;
+    font-size: 1em;
     box-shadow: 0 2px 5px #333;
     top:40%;
+    padding: 1.5em .5em;
     margin-top: -50px;
-    &:after {
-      content: '';
-      width:2px;
-      height: 40px;
-      position: absolute;
-      top:50%;
-      left:50%;
-      margin: -20px 0 0 -1px;
-      background: #fff;
-      border-radius: 10px;
+    color:#fff;
+    &:hover, &:focus{
+      background: #333;
     }
+
   }
 
 
